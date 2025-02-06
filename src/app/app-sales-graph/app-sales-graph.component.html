@@ -1,0 +1,49 @@
+<div class="dashboard">
+    <!-- Header Cards -->
+    <div class="header" *ngFor="let carddata of headerCards; let i = index">
+      <mat-card class="header-card">
+        <mat-card-header>
+          <mat-icon class="icon">{{ carddata.code }}</mat-icon>
+          <div class="card-title">{{ carddata.title }}</div>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="value">{{ carddata.rate }} {{ carddata.value }}</p>
+          <p class="description">{{ carddata.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    </div>
+    <div class="rowflex">
+     <div style="width:32%; height:400px"> <div  id="chart-container"></div></div>
+     <div style="width:32%"> <div  id="myDiv"></div></div>
+     <div style="z-index: 1;">
+      <button mat-button (click)="create()">Create</button>
+      <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.user_name }}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="mobile">
+          <th mat-header-cell *matHeaderCellDef>Mobile</th>
+          <td mat-cell *matCellDef="let element">{{ element.mobile }}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button (click)="updateStatus(element)">Edit</button>
+          </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    
+    </div>

@@ -1,0 +1,36 @@
+<div class="postionrelative">
+   <div class="widthalign">
+    <h2 mat-dialog-title>Create User</h2>
+    <mat-dialog-content>
+      <form [formGroup]="form">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="user_name" />
+          <mat-error *ngIf="form.get('user_name')?.hasError('required')">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error *ngIf="form.get('email')?.hasError('required')">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Mobile</mat-label>
+          <input matInput formControlName="mobile" />
+          <mat-error *ngIf="form.get('mobile')?.hasError('required')">
+            Mobile is required
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-button [disabled]="form.invalid" (click)="submit()">Submit</button>
+    </mat-dialog-actions>
+   </div>
+</div>

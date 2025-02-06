@@ -1,0 +1,54 @@
+.dashboard {
+    display: flex;
+    grid-template-rows: auto auto 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .header {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    width:32%
+  }
+  .charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .header-card {
+    text-align: center;
+    background-color: #f5f5f5;
+    width:100%;
+
+  }
+  ::ng-deep.mat-mdc-card-header{
+    justify-content: center;
+  }
+  .icon {
+    font-size: 24px;
+    color: #3f51b5;
+  }
+  .card-title {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+  .value {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .rowflex{
+    display: flex;
+   
+  }
+  ::ng-deep.mat-icon{
+    width:100% !important
+  }
+.mt-5{
+    margin-top:50px
+}

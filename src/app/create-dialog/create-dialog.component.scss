@@ -1,0 +1,22 @@
+.postionrelative{
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(151 145 145 / 70%);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 1;  
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.widthalign{
+    width:300px;
+    height:300px;
+    background: #fff;
+}
+::ng-deep.mdc-dialog__content>:first-child{
+    margin-top:10px
+}
