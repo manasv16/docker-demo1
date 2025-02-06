@@ -20,7 +20,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 
 # Copy Angular build output from Stage 1
-COPY --from=build /app/dist/angular-app /usr/share/nginx/html
+COPY --from=build /app/dist/dashboard-template /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
